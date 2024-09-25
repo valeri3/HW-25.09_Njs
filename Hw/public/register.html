@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+
+      if (message === 'success') {
+        alert('Registration successful!');
+      } else if (message === 'exists') {
+        alert('User with this ID or email already exists.');
+      } else if (message === 'mismatch') {
+        alert('Passwords do not match.');
+      } else if (message === 'error') {
+        alert('An error occurred. Please try again.');
+      }
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+  <h1>Register</h1>
+  <form action="/submit-register" method="post">
+
+    <div class="form-group">
+      <label for="userId">User ID [5 to 7 characters]:</label>
+      <input type="text" id="userId" name="userId" class="form-control" minlength="5" maxlength="7" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password [7 to 12 characters]:</label>
+      <input type="password" id="password" name="password" class="form-control" minlength="7" maxlength="12" required>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name [Alphabets only]:</label>
+      <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z]+" title="Alphabets only" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address [Alphanumeric characters]:</label>
+      <input type="text" id="address" name="address" class="form-control" pattern="[A-Za-z0-9\s]+" title="Alphanumeric characters only" required>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country [Select one]:</label>
+      <select id="country" name="country" class="form-control" required>
+        <option value="">(Please select a country)</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="zipCode">ZIP Code [Alphanumeric]:</label>
+      <input type="text" id="zipCode" name="zipCode" class="form-control" pattern="[A-Za-z0-9]+" title="Alphanumeric only" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email [Valid email]:</label>
+      <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="sex">Sex [Select Male or Female]:</label><br>
+      <input type="radio" id="male" name="sex" value="Male" required> Male
+      <input type="radio" id="female" name="sex" value="Female"> Female
+    </div>
+
+    <div class="form-group">
+      <label for="language">Language [Optional]:</label><br>
+      <input type="checkbox" id="english" name="language" value="English" checked> English
+      <input type="checkbox" id="nonEnglish" name="language" value="Non-English"> Non English
+    </div>
+
+    <div class="form-group">
+      <label for="about">About [Optional]:</label><br>
+      <textarea id="about" name="about" class="form-control" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/" class="btn btn-secondary">Back to Main</a>
+  </form>
+</div>
+</body>
+</html>

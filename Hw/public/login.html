@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+
+      if (message === 'error') {
+        alert('Incorrect login or password.');
+      }
+    }
+  </script>
+  <style>
+    .form-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .login-form {
+      flex: 1;
+    }
+    .logo-container {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Login</h1>
+  <div class="form-container">
+    <form action="/submit-login" method="post" class="login-form">
+      <div class="form-group">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <a href="/" class="btn btn-secondary">Back to Main</a>
+    </form>
+
+    <div class="logo-container">
+      <img src="/images/logo.png" alt="Logo" class="img-responsive">
+    </div>
+  </div>
+</div>
+</body>
+</html>

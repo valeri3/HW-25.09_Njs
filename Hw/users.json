@@ -1,0 +1,38 @@
+[
+  {
+    "userId": "john123",
+    "password": "securePass",
+    "name": "John",
+    "address": "123 Main St",
+    "country": "USA",
+    "zipCode": "12345",
+    "email": "john@example.com",
+    "sex": "Male",
+    "language": "English, Non-English",
+    "about": "Lorem ipsum..."
+  },
+  {
+    "userId": "awdwfa2",
+    "password": "123123q",
+    "name": "qwe",
+    "address": "qwe1",
+    "country": "USA",
+    "zipCode": "123",
+    "email": "123a@gmail.com",
+    "sex": "Female",
+    "language": "English",
+    "about": "a"
+  },
+  {
+    "userId": "awd123",
+    "password": "asdqwe123",
+    "name": "adwawd",
+    "address": "awdaw2",
+    "country": "UK",
+    "zipCode": "124124",
+    "email": "afawfwfwf@gmail.com",
+    "sex": "Female",
+    "language": "English",
+    "about": "awfwa"
+  }
+]
